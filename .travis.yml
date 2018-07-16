@@ -1,11 +1,13 @@
 language: php
 php:
     - '7.2'
-before-install:
+sudo: required
+dist: trusty
+before_install:
+    - composer self-update
     # Sodium is not part of the standard image, so let's add it
     - git clone -b stable https://github.com/jedisct1/libsodium.git
     - cd libsodium && sudo ./configure && sudo make check && sudo make install && cd ..
-    - composer self-update
 install:
     - pecl install libsodium
     - echo "extension=sodium.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
