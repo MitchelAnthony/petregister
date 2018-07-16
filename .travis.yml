@@ -8,4 +8,4 @@ install:
     - cp .env.dist .env
     - touch var/petregister.db
     - php bin/console d:d:c
-
+    - php bin/console d:s:u --force
