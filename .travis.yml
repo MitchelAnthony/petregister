@@ -6,5 +6,6 @@ before-install:
 install:
     - composer install
     - cp .env.dist .env
+    - touch var/petregister.db
     - php bin/console d:d:c
 
