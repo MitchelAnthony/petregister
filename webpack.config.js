@@ -15,8 +15,8 @@ Encore
     .enableVersioning(Encore.isProduction())
 
     // uncomment to define the assets of the project
-    .addEntry('js/app', './assets/js/main.ts')
-    .addStyleEntry('css/app', './assets/css/main.scss')
+    .addEntry('scripts', './assets/js/main.ts')
+    .addStyleEntry('styles', './assets/css/main.scss')
 
     // uncomment if you use TypeScript
     .enableTypeScriptLoader()
