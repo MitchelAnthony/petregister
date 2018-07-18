@@ -12,7 +12,9 @@ $ cp .env.dist .env
 $ touch var/petregister.db
 $ bin/console d:d:c
 $ bin/console d:s:u --force
-$ bin/console server:run
+$ bin/console d:f:l
+$ bin/console server:start
 $ yarn run encore dev --watch
 ```
-Open your browser and go to the link provider by server:run (usually http://localhost:8000)
+Open your browser and go to the link provider by server:run (usually http://localhost:8000). To login, go to /login and use admin/admin or user/user.
+

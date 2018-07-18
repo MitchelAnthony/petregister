@@ -18,7 +18,7 @@ final class ListPetsController extends AbstractCRUDController
      */
     public function __invoke(Request $request): Response
     {
-        $user = $this->token->getToken()->getUser();
+        $user = $this->token->getUser();
         $pets = $this->entityManager->getRepository(Pet::class)->findByUser($user);
         if (null === $pets) {
             $pets = [];

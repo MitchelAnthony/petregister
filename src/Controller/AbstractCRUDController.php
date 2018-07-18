@@ -30,6 +30,6 @@ abstract class AbstractCRUDController
     ) {
         $this->entityManager = $entityManager;
         $this->twig = $twig;
-        $this->token = $token;
+        $this->token = $token->getToken();
     }
 }

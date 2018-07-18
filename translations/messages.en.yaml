@@ -1,0 +1,11 @@
+entity:
+    pet:
+        label: 'Pet'
+        microchip_id: 'Microchip ID'
+        name: 'Name'
+        breed: 'Breed'
+        user: 'Owner'
+
+form:
+    pet:
+        submit: 'Save pet data'
