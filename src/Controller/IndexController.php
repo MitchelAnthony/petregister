@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Templating\EngineInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-class IndexController
+final class IndexController
 {
     /**
      * @var EngineInterface
