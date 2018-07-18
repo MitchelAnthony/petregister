@@ -23,6 +23,6 @@ class IndexController
      */
     public function __invoke()
     {
-        return new Response($this->twig->render('base.html.twig'));
+        return new Response($this->twig->render('index.html.twig'));
     }
 }
