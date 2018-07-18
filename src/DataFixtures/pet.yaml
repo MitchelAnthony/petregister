@@ -1,0 +1,16 @@
+App\Entity\Pet\Pet:
+    pet_1:
+        microchipId: '6dfdc384d6025b2ab9b71ec15971aa11'
+        name: 'Shiro'
+        breed: '@breed_1'
+        user: '@user_1'
+    pet_2:
+        microchipId: '0f064e34f4c1703f93825f7dc4a61865'
+        name: 'Nami'
+        breed: '@breed_1'
+        user: '@user_1'
+    pet_3:
+        microchipId: 'dc6b87b225663736f740516e492f9918'
+        name: 'Hoshi'
+        breed: '@breed_3'
+        user: '@user_2'

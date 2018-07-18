@@ -1,0 +1,10 @@
+App\Entity\Pet\Breed:
+    breed_1:
+        name: 'Thai'
+        species: '@species_1'
+    breed_2:
+        name: 'Bengal'
+        species: '@species_1'
+    breed_3:
+        name: 'Azawakh'
+        species: '@species_2'

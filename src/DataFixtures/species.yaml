@@ -1,0 +1,7 @@
+App\Entity\Pet\Species:
+    species_1:
+        name: 'Cat'
+    species_2:
+        name: 'Dog'
+    species_3:
+        name: 'Other'
