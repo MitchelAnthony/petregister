@@ -11,7 +11,7 @@ final class IndexController
     /**
      * @var EngineInterface
      */
-    protected $twig;
+    private $twig;
 
     public function __construct(EngineInterface $twig)
     {

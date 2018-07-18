@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for pet in pets %}
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    {{ pet.name }}
+                </p>
+                <a href="#" class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <ul>
+                        <li>Species: {{ pet.breed.species.name }}</li>
+                        <li>Breed: {{ pet.breed.name }}</li>
+                        <li>Microchip ID: {{ pet.microchipId }}</li>
+                    </ul>
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="{{ path('petregister_pet_edit', { 'id': pet.id }) }}" class="card-footer-item">Edit</a>
+                <a href="#" class="card-footer-item">Delete</a>
+            </footer>
+        </div>
+    {% endfor %}
+    <a href="{{ path('petregister_pet_new') }}">Add new</a>
+{% endblock %}
