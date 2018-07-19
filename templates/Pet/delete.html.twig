@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="box has-background-warning">
+        {{ 'form.pet.delete_message'|trans({
+            '%pet_name%': pet.name,
+            '%pet_id%': pet.microchipId
+        }) }}
+        <form method="post">
+            <input type="submit" name="confirm" value="{{ 'form.pet.delete'|trans({ '%pet_name%': pet.name }) }}" class="button is-danger">
+            <a href="{{ path('petregister_pet_list') }}" class="button is-info">
+                {{ 'form.pet.cancel'|trans }}
+            </a>
+        </form>
+    </div>
+{% endblock %}

@@ -24,7 +24,7 @@
             </div>
             <footer class="card-footer">
                 <a href="{{ path('petregister_pet_edit', { 'id': pet.id }) }}" class="card-footer-item">Edit</a>
-                <a href="#" class="card-footer-item">Delete</a>
+                <a href="{{ path('petregister_pet_delete', { 'id': pet.id }) }}" class="card-footer-item">Delete</a>
             </footer>
         </div>
     {% endfor %}
