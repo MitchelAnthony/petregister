@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Templating\EngineInterface;
 
 abstract class AbstractCRUDController
@@ -19,7 +20,7 @@ abstract class AbstractCRUDController
     protected $twig;
 
     /**
-     * @var TokenStorageInterface
+     * @var TokenInterface
      */
     protected $token;
 

@@ -35,8 +35,6 @@ final class EditPetController extends AbstractCRUDController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $pet = $form->getData();
-
             $this->entityManager->flush();
 
             return new RedirectResponse($router->generate('petregister_pet_list'));

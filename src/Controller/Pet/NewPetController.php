@@ -28,8 +28,6 @@ final class NewPetController extends AbstractCRUDController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $pet = $form->getData();
-
             $this->entityManager->persist($pet);
             $this->entityManager->flush();
 
