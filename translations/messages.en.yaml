@@ -9,3 +9,12 @@ entity:
 form:
     pet:
         submit: 'Save pet data'
+
+interface:
+    menu:
+       index: 'Home'
+       pet_list: 'Pets'
+       login: 'Login'
+       logout: 'Logout'
+       profile: 'Profile'
+       register: 'Register'

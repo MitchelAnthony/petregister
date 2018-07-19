@@ -1,0 +1,23 @@
+<div class="navbar-end">
+    <a class="navbar-item" href="{{ path('petregister_index') }}">
+        {{ 'interface.menu.index'|trans }}
+    </a>
+    {% if app.user %}
+        <a class="navbar-item" href="{{ path('petregister_pet_list') }}">
+            {{ 'interface.menu.pet_list'|trans }}
+        </a>
+        <a class="navbar-item" href="{{ path('fos_user_profile_show') }}">
+            {{ 'interface.menu.profile'|trans }}
+        </a>
+        <a class="navbar-item" href="{{ path('fos_user_security_logout') }}">
+            {{ 'interface.menu.logout'|trans }} {{ app.user.username|capitalize }}
+        </a>
+    {% else %}
+        <a class="navbar-item" href="{{ path('fos_user_security_login') }}">
+            {{ 'interface.menu.login'|trans }}
+        </a>
+        <a class="navbar-item" href="{{ path('fos_user_registration_register') }}">
+            {{ 'interface.menu.register'|trans }}
+        </a>
+    {% endif %}
+</div>
