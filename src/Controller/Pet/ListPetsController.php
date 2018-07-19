@@ -20,9 +20,6 @@ final class ListPetsController extends AbstractCRUDController
     {
         $user = $this->token->getUser();
         $pets = $this->entityManager->getRepository(Pet::class)->findBy(['user' => $user]);
-        if (null === $pets) {
-            $pets = [];
-        }
 
         return new Response($this->twig->render('Pet/list.html.twig', [
             'pets' => $pets,
