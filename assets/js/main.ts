@@ -1,5 +1,5 @@
 window.onload = function () {
-    let cards = document.getElementsByClassName('card');
+    let cards = document.getElementsByClassName('card-header');
     for(let i = 0; i < cards.length; i++) {
         let card = cards.item(i);
         card.addEventListener('click', toggleCard);
@@ -7,7 +7,7 @@ window.onload = function () {
 };
 
 function toggleCard(event: any): void {
-    let card = event.currentTarget;
+    let card = event.currentTarget.parentElement;
     card.getElementsByClassName('card-content').item(0).classList.toggle('is-hidden');
     card.getElementsByClassName('card-footer').item(0).classList.toggle('is-hidden');
 
