@@ -2,7 +2,7 @@
 
 namespace App\Controller\Pet;
 
-use App\Controller\AbstractCRUDController;
+use App\Controller\AbstractController;
 use App\Entity\Pet\Pet;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-final class DeletePetController extends AbstractCRUDController
+final class DeletePetController extends AbstractController
 {
     /**
      * @Route("pet/{id}/delete", name="petregister_pet_delete")

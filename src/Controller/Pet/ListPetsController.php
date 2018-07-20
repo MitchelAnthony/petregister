@@ -2,14 +2,14 @@
 
 namespace App\Controller\Pet;
 
-use App\Controller\AbstractCRUDController;
+use App\Controller\AbstractController;
 use App\Entity\Pet\Pet;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-final class ListPetsController extends AbstractCRUDController
+final class ListPetsController extends AbstractController
 {
     /**
      * @Route("pet/list", name="petregister_pet_list")

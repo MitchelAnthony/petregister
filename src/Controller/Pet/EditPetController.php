@@ -2,7 +2,7 @@
 
 namespace App\Controller\Pet;
 
-use App\Controller\AbstractCRUDController;
+use App\Controller\AbstractController;
 use App\Entity\Pet\Pet;
 use App\Form\PetType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-final class EditPetController extends AbstractCRUDController
+final class EditPetController extends AbstractController
 {
     /**
      * @Route("pet/{id}/edit", name="petregister_pet_edit")
