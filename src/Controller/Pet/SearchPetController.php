@@ -18,8 +18,8 @@ final class SearchPetController extends AbstractController
      */
     public function __invoke(Request $request, Pet $pet = null): Response
     {
-        dump($pet);
-
-        return new Response('<body></body>');
+        return new Response($this->twig->render('Pet/search.html.twig', [
+            'pet' => $pet,
+        ]));
     }
 }

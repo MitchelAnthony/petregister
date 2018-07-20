@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="columns is-mobile">
+        <div class="column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet has-background-primary">
+            {% if pet is not null %}
+                <div class="card is-size-5-margin-top is-size-5-margin-bottom">
+                    <header class="card-header">
+                        <p class="card-header-title is-centered">
+                            {{ pet.name }}
+                        </p>
+                        <a href="#" class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </span>
+                        </a>
+                    </header>
+                    <div class="card-content is-hidden">
+                        <div class="content">
+                            <ul>
+                                <li>{{ 'entity.species.label'|trans }}: {{ pet.breed.species.name }}</li>
+                                <li>{{ 'entity.breed.label'|trans }}: {{ pet.breed.name }}</li>
+                                <li>{{ 'entity.pet.microchip_id'|trans }}: {{ pet.microchipId }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                Not found
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
