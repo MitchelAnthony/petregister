@@ -9,7 +9,10 @@
     </head>
     <body>
         <div class="columns is-mobile">
-            <div class="column is-three-fifths is-offset-one-fifth has-background-primary">
+            <div class="column has-background-primary
+                        is-10-mobile is-offset-1-mobile
+                        is-8-tablet is-offset-2-tablet
+                        is-6-fullhd is-offset-3-fullhd">
                 {% include 'menu.html.twig' %}
                 {% block body %}{% endblock %}
             </div>

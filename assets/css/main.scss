@@ -1,2 +1,14 @@
-@import "~bulma/css/bulma.css";
+@import "~bulma/bulma";
 @import "~font-awesome/css/font-awesome.css";
+
+// Let's define some margins based on the sizes in Bulma
+$directions: top, bottom, left, right;
+
+@each $size in $sizes {
+  $i: index($sizes, $size);
+  @each $direction in $directions  {
+    .is-size-#{$i}-margin-#{$direction} {
+      margin-#{$direction}: $size;
+    }
+  }
+}

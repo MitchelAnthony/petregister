@@ -1,32 +1,45 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% for pet in pets %}
-        <div class="card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    {{ pet.name }}
-                </p>
-                <a href="#" class="card-header-icon" aria-label="more options">
-                    <span class="icon">
-                        <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                </a>
-            </header>
-            <div class="card-content">
-                <div class="content">
-                    <ul>
-                        <li>Species: {{ pet.breed.species.name }}</li>
-                        <li>Breed: {{ pet.breed.name }}</li>
-                        <li>Microchip ID: {{ pet.microchipId }}</li>
-                    </ul>
+    <div class="columns is-mobile">
+        <div class="column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet has-background-primary">
+        <a href="{{ path('petregister_pet_new') }}" class="button is-link">
+            {{ 'interface.actions.new'|trans }}
+        </a>
+        {% for pet in pets %}
+            <div class="card is-size-5-margin-top {{ (loop.last) ? 'is-size-5-margin-bottom' }}">
+                <header class="card-header">
+                    <p class="card-header-title is-centered">
+                        {{ pet.name }}
+                    </p>
+                    <a href="#" class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                </header>
+                <div class="card-content is-hidden">
+                    <div class="content">
+                        <ul>
+                            <li>{{ 'entity.species.label'|trans }}: {{ pet.breed.species.name }}</li>
+                            <li>{{ 'entity.breed.label'|trans }}: {{ pet.breed.name }}</li>
+                            <li>{{ 'entity.pet.microchip_id'|trans }}: {{ pet.microchipId }}</li>
+                        </ul>
+                    </div>
                 </div>
+                <footer class="card-footer is-hidden">
+                    <a href="{{ path('petregister_pet_edit', { 'id': pet.id }) }}" class="card-footer-item">
+                        {{ 'interface.actions.edit'|trans }}
+                    </a>
+                    <a href="{{ path('petregister_pet_delete', { 'id': pet.id }) }}" class="card-footer-item">
+                        {{ 'interface.actions.delete'|trans }}
+                    </a>
+                    <a href="{#{ path('petregister_pet_transfer', { 'id': pet.id }) }#}" class="card-footer-item">
+                        {{ 'interface.actions.transfer'|trans }}
+                    </a>
+                </footer>
             </div>
-            <footer class="card-footer">
-                <a href="{{ path('petregister_pet_edit', { 'id': pet.id }) }}" class="card-footer-item">Edit</a>
-                <a href="{{ path('petregister_pet_delete', { 'id': pet.id }) }}" class="card-footer-item">Delete</a>
-            </footer>
+        {% endfor %}
         </div>
-    {% endfor %}
-    <a href="{{ path('petregister_pet_new') }}">Add new</a>
+    </div>
 {% endblock %}
