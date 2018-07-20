@@ -6,6 +6,12 @@ entity:
         breed: 'Breed'
         user: 'Owner'
 
+    breed:
+        label: 'Breed'
+
+    species:
+        label: 'Species'
+
 form:
     pet:
         submit: 'Save pet data'
@@ -15,9 +21,15 @@ form:
 
 interface:
     menu:
-       index: 'Home'
-       pet_list: 'Pets'
-       login: 'Login'
-       logout: 'Logout'
-       profile: 'Profile'
-       register: 'Register'
+        index: 'Home'
+        pet_list: 'Pets'
+        login: 'Login'
+        logout: 'Logout'
+        profile: 'Profile'
+        register: 'Register'
+
+    actions:
+        new: 'Add another pet'
+        edit: 'Edit'
+        delete: 'Delete'
+        transfer: 'Transfer ownership'
