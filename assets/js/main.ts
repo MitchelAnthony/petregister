@@ -22,8 +22,6 @@ function toggleCard(event: any): void {
             cardElement.item(0).classList.toggle('is-hidden');
         }
     }
-    // card.getElementsByClassName('card-content').item(0).classList.toggle('is-hidden');
-    // card.getElementsByClassName('card-footer').item(0).classList.toggle('is-hidden');
 
     let cardArrowClassList = card.getElementsByClassName('fa').item(0).classList;
     if (cardArrowClassList.contains('fa-angle-right')) {
