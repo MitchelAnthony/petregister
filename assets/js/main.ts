@@ -12,8 +12,18 @@ window.onload = function () {
 
 function toggleCard(event: any): void {
     let card = event.currentTarget.parentElement;
-    card.getElementsByClassName('card-content').item(0).classList.toggle('is-hidden');
-    card.getElementsByClassName('card-footer').item(0).classList.toggle('is-hidden');
+    let cardElements = [
+        card.getElementsByClassName('card-content'),
+        card.getElementsByClassName('card-footer'),
+    ];
+
+    for (let cardElement of cardElements) {
+        if (1 === cardElement.length) {
+            cardElement.item(0).classList.toggle('is-hidden');
+        }
+    }
+    // card.getElementsByClassName('card-content').item(0).classList.toggle('is-hidden');
+    // card.getElementsByClassName('card-footer').item(0).classList.toggle('is-hidden');
 
     let cardArrowClassList = card.getElementsByClassName('fa').item(0).classList;
     if (cardArrowClassList.contains('fa-angle-right')) {
