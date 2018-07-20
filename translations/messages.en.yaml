@@ -33,3 +33,4 @@ interface:
         edit: 'Edit'
         delete: 'Delete'
         transfer: 'Transfer ownership'
+        search: 'Find by Microchip ID'

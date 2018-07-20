@@ -1,9 +1,13 @@
 window.onload = function () {
+    // TODO Refactor the contents of this function
     let cards = document.getElementsByClassName('card-header');
     for(let i = 0; i < cards.length; i++) {
         let card = cards.item(i);
         card.addEventListener('click', toggleCard);
     }
+
+    let form = document.forms['form-search'];
+    form.addEventListener('submit', updateAction);
 };
 
 function toggleCard(event: any): void {
@@ -17,4 +21,9 @@ function toggleCard(event: any): void {
     } else {
         cardArrowClassList.replace('fa-angle-down', 'fa-angle-right')
     }
+}
+
+function updateAction(event: any): void {
+    let form = event.currentTarget;
+    form.action = form.action.replace('_placeholder_id_', form['q'].value);
 }

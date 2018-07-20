@@ -1,4 +1,7 @@
 <div class="navbar-end">
+    <form name="form-search" method="post" action="{{ path('petregister_pet_search', { 'id': '_placeholder_id_' }) }}">
+        <input type="search" id="q" name="q" placeholder="{{ 'interface.actions.search'|trans }}">
+    </form>
     <a class="navbar-item" href="{{ path('petregister_index') }}">
         {{ 'interface.menu.index'|trans }}
     </a>
