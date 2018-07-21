@@ -2,7 +2,7 @@
 
 namespace App\Entity\Pet;
 
-use App\Entity\User;
+use App\Entity\User\User;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,7 +43,7 @@ class Pet
     /**
      * @var User
      *
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="pets")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\User", inversedBy="pets")
      */
     protected $user;
 

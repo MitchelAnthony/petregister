@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\User\User;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,7 +44,7 @@ class Notification
      * @var User
      *
      * A notification must always have a registered User as the receiver ...
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="receivedNotifications")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\User", inversedBy="receivedNotifications")
      * @ORM\JoinColumn(nullable=false)
      */
     protected $receiver;
@@ -52,7 +53,7 @@ class Notification
      * @var User
      *
      * ... whereas the sender could be an unregistered visitor.
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="sentNotifications")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\User", inversedBy="sentNotifications")
      */
     protected $sender;
 
