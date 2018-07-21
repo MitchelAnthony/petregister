@@ -23,8 +23,9 @@ Open your browser and go to the link provider by server:run (usually http://loca
 As a __visitor__, I want to
 * ~~register an account~~
 * ~~login to my account~~
-* search for a matching microchipId
+* ~~search for a matching microchipId~~
 * alert the owner that I found their animal
+* Be notified if the microchipId is found in another database (via http://www.europetnet.com/apiSearch.php?chipID={id} or http://www.europetnet.com/apiSearch.php?chipIDS={id})
 
 As a __pet owner__, I want to
 * ~~add a pet~~
