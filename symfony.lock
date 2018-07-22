@@ -107,6 +107,9 @@
     "myclabs/deep-copy": {
         "version": "1.8.1"
     },
+    "myclabs/php-enum": {
+        "version": "1.6.1"
+    },
     "nelmio/alice": {
         "version": "3.2",
         "recipe": {
