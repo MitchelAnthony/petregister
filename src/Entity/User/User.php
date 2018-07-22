@@ -43,13 +43,6 @@ class User extends BaseUser
      */
     protected $sentNotifications;
 
-    /**
-     * @var Preferences
-     *
-     * @ORM\Embedded(class="App\Entity\User\Preferences", columnPrefix=false)
-     */
-    protected $preferences;
-
     public function __construct()
     {
         parent::__construct();
@@ -57,7 +50,6 @@ class User extends BaseUser
         $this->pets = new ArrayCollection();
         $this->receivedNotifications = new ArrayCollection();
         $this->sentNotifications = new ArrayCollection();
-        $this->preferences = new Preferences();
     }
 
     /**
@@ -116,26 +108,6 @@ class User extends BaseUser
     public function setSentNotifications(Collection $sentNotifications): User
     {
         $this->sentNotifications = $sentNotifications;
-
-        return $this;
-    }
-
-    /**
-     * @return Preferences
-     */
-    public function getPreferences(): Preferences
-    {
-        return $this->preferences;
-    }
-
-    /**
-     * @param Preferences $preferences
-     *
-     * @return User
-     */
-    public function setPreferences(Preferences $preferences): User
-    {
-        $this->preferences = $preferences;
 
         return $this;
     }
