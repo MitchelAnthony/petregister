@@ -43,6 +43,13 @@ class User extends BaseUser
      */
     protected $sentNotifications;
 
+    /**
+     * @var Collection
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\User\Contact", mappedBy="user")
+     */
+    protected $contacts;
+
     public function __construct()
     {
         parent::__construct();
@@ -50,6 +57,7 @@ class User extends BaseUser
         $this->pets = new ArrayCollection();
         $this->receivedNotifications = new ArrayCollection();
         $this->sentNotifications = new ArrayCollection();
+        $this->contacts = new ArrayCollection();
     }
 
     /**
@@ -108,6 +116,26 @@ class User extends BaseUser
     public function setSentNotifications(Collection $sentNotifications): User
     {
         $this->sentNotifications = $sentNotifications;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getContacts(): Collection
+    {
+        return $this->contacts;
+    }
+
+    /**
+     * @param Collection $contacts
+     *
+     * @return User
+     */
+    public function setContacts(Collection $contacts): User
+    {
+        $this->contacts = $contacts;
 
         return $this;
     }

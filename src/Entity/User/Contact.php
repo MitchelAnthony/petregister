@@ -2,6 +2,7 @@
 
 namespace App\Entity\User;
 
+use App\Enum\Preference;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -45,6 +46,20 @@ class Contact
      * @ORM\Embedded(class="App\Entity\User\Address", columnPrefix=false)
      */
     protected $address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     */
+    protected $preference;
+
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\User", inversedBy="contacts")
+     */
+    protected $user;
 
     /**
      * @return string
@@ -130,6 +145,46 @@ class Contact
     public function setAddress(Address $address): Contact
     {
         $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * @return Preference
+     */
+    public function getPreference(): Preference
+    {
+        return new Preference($this->preference);
+    }
+
+    /**
+     * @param Preference $preference
+     *
+     * @return Contact
+     */
+    public function setPreference(Preference $preference): Contact
+    {
+        $this->preference = $preference->getValue();
+
+        return $this;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     *
+     * @return Contact
+     */
+    public function setUser(User $user): Contact
+    {
+        $this->user = $user;
 
         return $this;
     }
