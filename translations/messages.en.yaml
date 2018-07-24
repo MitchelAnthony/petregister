@@ -34,3 +34,4 @@ interface:
         delete: 'Delete'
         transfer: 'Transfer ownership'
         search: 'Find by Microchip ID'
+        found: 'I found %pet_name% and want to contact its owner!'

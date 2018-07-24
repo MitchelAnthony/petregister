@@ -24,6 +24,11 @@
                             </ul>
                         </div>
                     </div>
+                    <footer class="card-footer is-hidden">
+                        <a href="{{ path('petregister_pet_found', {'id': pet.id}) }}" class="card-footer-item">
+                            {{ 'interface.actions.found'|trans({'%pet_name%': pet.name}) }}
+                        </a>
+                    </footer>
                 </div>
             {% else %}
                 Not found
