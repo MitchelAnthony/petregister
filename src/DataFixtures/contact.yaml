@@ -1,0 +1,22 @@
+App\Entity\User\Contact:
+    contact_1:
+        name: 'Anne'
+        email: 'anne@example.com'
+        phone: '1234567890'
+#        address:
+        preference: '<(new App\Enum\Preference(App\Enum\Preference::ALLOW_VISITORS))>'
+        user: '@user_1'
+    contact_2:
+        name: 'Ben'
+        email: 'ben@example.com'
+        phone: '3456789012'
+#        address:
+        preference: '<(new App\Enum\Preference(App\Enum\Preference::ALLOW_USERS))>'
+        user: '@user_1'
+    contact_3:
+        name: 'Craig'
+        email: 'craig@example.com'
+        phone: '7890123456'
+#        address:
+        preference: '<(new App\Enum\Preference(App\Enum\Preference::ALLOW_VETS))>'
+        user: '@user_1'

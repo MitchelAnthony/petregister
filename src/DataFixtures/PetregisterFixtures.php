@@ -22,6 +22,7 @@ class PetregisterFixtures extends Fixture
     {
         $fixtureFiles = [
             __DIR__ . '/user.yaml',
+            __DIR__ . '/contact.yaml',
             __DIR__ . '/species.yaml',
             __DIR__ . '/breed.yaml',
             __DIR__ . '/pet.yaml',

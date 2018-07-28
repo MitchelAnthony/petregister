@@ -48,9 +48,9 @@ class Contact
     protected $address;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
      */
     protected $preference;
 
@@ -60,6 +60,11 @@ class Contact
      * @ORM\ManyToOne(targetEntity="App\Entity\User\User", inversedBy="contacts")
      */
     protected $user;
+
+    public function __construct()
+    {
+        $this->address = new Address();
+    }
 
     /**
      * @return string

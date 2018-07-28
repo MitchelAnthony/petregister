@@ -12,12 +12,22 @@ entity:
     species:
         label: 'Species'
 
+    notification:
+        label: 'Notification'
+        sender: 'Sender'
+        receiver: 'Receiver'
+        subject: 'Subject'
+        message: 'Message'
+
 form:
     pet:
         submit: 'Save pet data'
         delete: 'Yes, delete %pet_name%'
         delete_message: 'Are you sure you want to delete %pet_name% (%pet_id%)?'
         cancel: 'Cancel'
+
+    notification:
+        submit: 'Send message'
 
 interface:
     menu:

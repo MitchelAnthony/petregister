@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if contacts is defined %}
+        {% for contact in contacts %}
+            {{ contact.name }}
+        {% endfor %}
+    {% endif %}
+    {% if form is defined %}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    {% endif %}
+{% endblock %}

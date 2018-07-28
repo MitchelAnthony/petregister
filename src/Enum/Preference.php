@@ -6,7 +6,7 @@ use MyCLabs\Enum\Enum;
 
 class Preference extends Enum
 {
-    private const ALLOW_VISITORS = 'allow-visitors';
-    private const ALLOW_USERS    = 'allow-users';
-    private const ALLOW_VETS     = 'allow-vets';
+    public const ALLOW_VISITORS = 0;
+    public const ALLOW_USERS    = 1;
+    public const ALLOW_VETS     = 2;
 }
