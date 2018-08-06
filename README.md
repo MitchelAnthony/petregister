@@ -16,7 +16,7 @@ $ bin/console d:f:l
 $ bin/console server:start
 $ yarn run encore dev --watch
 ```
-Open your browser and go to the link provider by server:run (usually http://localhost:8000). To login, go to /login and use admin/admin or user/user.
+Open your browser and go to the link provided by server:run (usually http://localhost:8000). To login, go to /login and use admin/admin or user/user.
 
 ## Backlog
 
@@ -25,7 +25,8 @@ As a __visitor__, I want to
 * ~~login to my account~~
 * ~~search for a matching microchipId~~
 * alert the owner that I found their animal
-* Be notified if the microchipId is found in another database (via http://www.europetnet.com/apiSearch.php?chipID={id} or http://www.europetnet.com/apiSearch.php?chipIDS={id})
+* be notified if the microchipId is found in another database (via http://www.europetnet.com/apiSearch.php?chipID={id} or http://www.europetnet.com/apiSearch.php?chipIDS={id})
+* browse a list of missing pets
 
 As a __pet owner__, I want to
 * ~~add a pet~~
@@ -35,6 +36,7 @@ As a __pet owner__, I want to
 * fill out my contact data
 * set my contact preferences
 * delete my account
+* report my pet as missing
 
 As a __veterinarian__ [*][1], I want to
 *
