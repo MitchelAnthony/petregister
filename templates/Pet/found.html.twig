@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% if contacts is defined %}
+    {% if contacts is defined and contacts|length > 0 %}
+        {# TODO Use translations for text #}
+        {{ pet.name }}'s owner has provided the following contact(s):
         {% for contact in contacts %}
-            {{ contact.name }}
+            <p>{{ contact.name }}, {{ contact.phone }}</p>
         {% endfor %}
     {% endif %}
+    {# TODO Use translations for text #}
+    You can contact {{ pet.name }}'s owner via direct message using this form:
     {% if form is defined %}
         {{ form_start(form) }}
         {{ form_widget(form) }}
