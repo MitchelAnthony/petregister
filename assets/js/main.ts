@@ -1,3 +1,5 @@
+declare function zxcvbn(password: any);
+
 window.onload = function () {
     // TODO Refactor the contents of this function
     let cards = document.getElementsByClassName('card-header');
@@ -8,6 +10,9 @@ window.onload = function () {
 
     let form = document.forms['form-search'];
     form.addEventListener('submit', updateAction);
+
+    let passwordInput = document.getElementById('fos_user_registration_form_plainPassword_first');
+    passwordInput.addEventListener('keyup', showPasswordStrength)
 };
 
 function toggleCard(event: any): void {
@@ -34,4 +39,10 @@ function toggleCard(event: any): void {
 function updateAction(event: any): void {
     let form = event.currentTarget;
     form.action = form.action.replace('_placeholder_id_', form['q'].value);
+}
+
+function showPasswordStrength(event: any): void {
+    let result = zxcvbn(event.currentTarget.value);
+    let outputSpan = document.getElementById('password-strength');
+    outputSpan.innerText = result.score + '/4';
 }
