@@ -45,11 +45,11 @@ As an __administrator__, I want to
 *
 
 Since this is a public project that can be used by anyone in a production setting, let's alo add some security best practices / [owasp](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf) / [nist](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecret) recommendations.
-* Passwords of at least 8 characters
+* ~~Passwords of at least 8 characters~~
 * Blacklist of 'forbidden' / leaked passwords
-* Password strength guidance / meter
+* ~~Password strength guidance / meter~~
 * A guide to setup SSL for this project to prevent MitM attacks
-* Expensive hashing for passwords
+* ~~Expensive hashing for passwords => argon2i~~
 * Possibly 2FA
 * Limit login attempts
 * Log all login / access control / validation failures
