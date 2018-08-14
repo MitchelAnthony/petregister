@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 final class DeletePetController extends AbstractController
@@ -22,7 +21,7 @@ final class DeletePetController extends AbstractController
      *
      * @ParamConverter("pet", class="App\Entity\Pet\Pet")
      */
-    public function __invoke(Request $request, Pet $pet, RouterInterface $router): Response
+    public function __invoke(Request $request, Pet $pet): Response
     {
         if ($pet->getUser() !== $this->token->getUser()) {
             throw new AccessDeniedException();
@@ -32,7 +31,7 @@ final class DeletePetController extends AbstractController
             $this->entityManager->remove($pet);
             $this->entityManager->flush();
 
-            return new RedirectResponse($router->generate('petregister_pet_list'));
+            return new RedirectResponse($this->router->generate('petregister_pet_list'));
         }
 
         return new Response($this->twig->render('Pet/delete.html.twig', [

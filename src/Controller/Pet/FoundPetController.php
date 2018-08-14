@@ -14,7 +14,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\RouterInterface;
 
 final class FoundPetController extends AbstractController
 {
@@ -23,7 +22,7 @@ final class FoundPetController extends AbstractController
      *
      * @ParamConverter("pet", class="App\Entity\Pet\Pet")
      */
-    public function __invoke(Request $request, Pet $pet, FormFactoryInterface $formFactory, RouterInterface $router): Response
+    public function __invoke(Request $request, Pet $pet, FormFactoryInterface $formFactory): Response
     {
         $contacts = [];
         /** @var Contact $contact */
@@ -44,7 +43,7 @@ final class FoundPetController extends AbstractController
             $this->entityManager->persist($notification);
             $this->entityManager->flush();
 
-            return new RedirectResponse($router->generate('petregister_index'));
+            return new RedirectResponse($this->router->generate('petregister_index'));
         }
 
         return new Response($this->twig->render('Pet/found.html.twig', [
