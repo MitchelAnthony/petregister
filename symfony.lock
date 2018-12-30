@@ -89,6 +89,9 @@
     "egulias/email-validator": {
         "version": "2.1.4"
     },
+    "facebook/webdriver": {
+        "version": "1.6.0"
+    },
     "fig/link-util": {
         "version": "1.0.0"
     },
@@ -152,6 +155,18 @@
     "psr/simple-cache": {
         "version": "1.0.1"
     },
+    "sebastian/comparator": {
+        "version": "3.0.2"
+    },
+    "sebastian/diff": {
+        "version": "3.0.1"
+    },
+    "sebastian/exporter": {
+        "version": "3.1.0"
+    },
+    "sebastian/recursion-context": {
+        "version": "3.0.0"
+    },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
         "recipe": {
@@ -184,6 +199,9 @@
             "version": "3.3",
             "ref": "e3868d2f4a5104f19f844fe551099a00c6562527"
         }
+    },
+    "symfony/contracts": {
+        "version": "v1.0.2"
     },
     "symfony/css-selector": {
         "version": "v4.1.1"
@@ -290,6 +308,9 @@
     "symfony/orm-pack": {
         "version": "v1.0.5"
     },
+    "symfony/panther": {
+        "version": "v0.2.0"
+    },
     "symfony/phpunit-bridge": {
         "version": "4.1",
         "recipe": {
@@ -332,9 +353,6 @@
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
         }
     },
-    "symfony/security": {
-        "version": "v4.1.1"
-    },
     "symfony/security-bundle": {
         "version": "3.3",
         "recipe": {
@@ -343,6 +361,18 @@
             "version": "3.3",
             "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
+    },
+    "symfony/security-core": {
+        "version": "v4.2.1"
+    },
+    "symfony/security-csrf": {
+        "version": "v4.2.1"
+    },
+    "symfony/security-guard": {
+        "version": "v4.2.1"
+    },
+    "symfony/security-http": {
+        "version": "v4.2.1"
     },
     "symfony/serializer": {
         "version": "v4.1.1"
@@ -374,7 +404,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "3.3",
-            "ref": "6bcd6c570c017ea6ae5a7a6a027c929fd3542cd8"
+            "ref": "1fb02a6e1c8f3d4232cce485c9afa868d63b115a"
         }
     },
     "symfony/twig-bridge": {
@@ -394,6 +424,9 @@
     },
     "symfony/var-dumper": {
         "version": "v4.1.1"
+    },
+    "symfony/var-exporter": {
+        "version": "v4.2.1"
     },
     "symfony/web-link": {
         "version": "v4.1.1"
