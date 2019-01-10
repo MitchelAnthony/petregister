@@ -11,7 +11,7 @@ install:
     - pecl install libsodium
     - echo "extension=sodium.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
     - composer install
-    - cp .env.dist .env
+    - cp .env .env.local
     - touch var/petregister.db
     - php bin/console d:d:c
     - php bin/console d:s:u --force
