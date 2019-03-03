@@ -1,5 +1,6 @@
 # Petregister
-[![Build Status](https://travis-ci.org/MitchelAnthony/petregister.svg?branch=master)](https://travis-ci.org/MitchelAnthony/petregister) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/MitchelAnthony/petregister/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/MitchelAnthony/petregister/?branch=master)
+Master: [![Build Status](https://travis-ci.org/MitchelAnthony/petregister.svg?branch=master)](https://travis-ci.org/MitchelAnthony/petregister) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/MitchelAnthony/petregister/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/MitchelAnthony/petregister/?branch=master)
+Develop: [![Build Status](https://travis-ci.org/MitchelAnthony/petregister.svg?branch=develop)](https://travis-ci.org/MitchelAnthony/petregister) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/MitchelAnthony/petregister/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/MitchelAnthony/petregister/?branch=develop)
 
 This project and readme are work in progress.
 
@@ -8,7 +9,7 @@ This project and readme are work in progress.
 ```
 $ composer install
 $ yarn
-$ cp .env.dist .env
+$ cp .env .env.local
 $ touch var/petregister.db
 $ bin/console d:d:c
 $ bin/console d:s:u --force
