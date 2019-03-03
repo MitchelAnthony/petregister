@@ -46,7 +46,7 @@ final class CreatePetController
      */
     public function __invoke(Request $request): Response
     {
-        $pet = (new Pet())->setUser($this->tokenStorage->getUser());
+        $pet = (new Pet())->setUser($this->tokenStorage->getToken()->getUser());
         $form = $this->formFactory->create(PetType::class, $pet);
 
         $form->handleRequest($request);
