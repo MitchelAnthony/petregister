@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity\Pet;
 
 use App\Entity\User\User;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -23,6 +26,8 @@ class Pet
      * @var string
      *
      * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank()
      */
     protected $microchipId;
 
@@ -30,6 +35,8 @@ class Pet
      * @var string
      *
      * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank()
      */
     protected $name;
 
@@ -68,7 +75,7 @@ class Pet
      *
      * @return Pet
      */
-    public function setMicrochipId(string $microchipId): Pet
+    public function setMicrochipId(string $microchipId): self
     {
         $this->microchipId = $microchipId;
 
@@ -88,7 +95,7 @@ class Pet
      *
      * @return Pet
      */
-    public function setName(string $name): Pet
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -108,7 +115,7 @@ class Pet
      *
      * @return Pet
      */
-    public function setBreed(Breed $breed): Pet
+    public function setBreed(Breed $breed): self
     {
         $this->breed = $breed;
 
@@ -128,7 +135,7 @@ class Pet
      *
      * @return Pet
      */
-    public function setUser(User $user): Pet
+    public function setUser(User $user): self
     {
         $this->user = $user;
 
