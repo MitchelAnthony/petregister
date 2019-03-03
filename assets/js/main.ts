@@ -1,7 +1,6 @@
 declare function zxcvbn(password: any);
 
 window.onload = function () {
-    // TODO Refactor the contents of this function
     let cards = document.getElementsByClassName('card-header');
     for(let i = 0; i < cards.length; i++) {
         let card = cards.item(i);

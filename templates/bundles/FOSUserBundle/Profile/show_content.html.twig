@@ -3,7 +3,15 @@
 <div class="fos_user_user_show">
     <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-
+    {% if user.contacts.count >= 1 %}
+        <p>Contacts:
+            <ul>
+            {% for contact in user.contacts %}
+                <li>{{ contact.name }}</li>
+            {% endfor %}
+            </ul>
+        </p>
+    {% endif %}
     <a class="button is-success" href="{{ path('fos_user_profile_edit') }}">
         {{ 'interface.actions.edit'|trans({}, 'messages') }}
     </a>
