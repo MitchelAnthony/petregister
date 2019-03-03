@@ -1,16 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller\Pet;
 
-use App\Controller\AbstractController;
 use App\Entity\Pet\Pet;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Templating\EngineInterface;
 
-final class SearchPetController extends AbstractController
+final class SearchPetController
 {
+    private $twig;
+
+    public function __construct(EngineInterface $twig)
+    {
+        $this->twig = $twig;
+    }
+
     /**
      * @Route("/pet/search/{id}", name="petregister_pet_search")
      *
