@@ -3,7 +3,7 @@
 {% block body %}
     <div class="columns is-mobile">
         <div class="column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet has-background-primary">
-        <a href="{{ path('petregister_pet_new') }}" class="button is-link">
+        <a href="{{ path('petregister_pet_create') }}" class="button is-link">
             {{ 'interface.actions.new'|trans }}
         </a>
         {% for pet in pets %}
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <footer class="card-footer is-hidden">
-                    <a href="{{ path('petregister_pet_edit', { 'id': pet.id }) }}" class="card-footer-item">
+                    <a href="{{ path('petregister_pet_update', { 'id': pet.id }) }}" class="card-footer-item">
                         {{ 'interface.actions.edit'|trans }}
                     </a>
                     <a href="{{ path('petregister_pet_delete', { 'id': pet.id }) }}" class="card-footer-item">
