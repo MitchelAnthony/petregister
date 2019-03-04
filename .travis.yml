@@ -1,17 +1,19 @@
 language: php
 php:
     - '7.2'
+    - '7.3'
 sudo: required
 dist: trusty
 before_install:
     # Sodium is not part of the standard image, so let's add it
-    - git clone -b stable https://github.com/jedisct1/libsodium.git
-    - cd libsodium && sudo ./configure && sudo make check && sudo make install && cd ..
+#    - git clone -b stable https://github.com/jedisct1/libsodium.git
+#    - cd libsodium && sudo ./configure && sudo make check && sudo make install && cd ..
 install:
-    - pecl install libsodium
-    - echo "extension=sodium.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+#    - pecl install libsodium
+#    - echo "extension=sodium.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
     - composer install
     - cp .env .env.local
     - touch var/petregister.db
     - php bin/console d:d:c
     - php bin/console d:s:u --force
+script: bin/phpunit
