@@ -1,9 +1,43 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>Password strength: <span id="password-strength">unknown</span></div>
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    <div class="field">
+        <p class="control">
+            <label class="label">{{ form_label(form.username) }}</label>
+            {{ form_widget(form.username, {'attr': {'class': 'input'}}) }}
+        </p>
+    </div>
+
+    <div class="field">
+        <p class="control">
+            <label class="label">{{ form_label(form.email) }}</label>
+            {{ form_widget(form.email, {'attr': {'class': 'input'}}) }}
+        </p>
+    </div>
+
+    <div class="field">
+        <p class="control">
+            <label class="label">{{ form_label(form.plainPassword.first) }}</label>
+            {{ form_widget(form.plainPassword.first, {'attr': {'class': 'input'}}) }}
+        </p>
+    </div>
+
+    <div class="field">
+        <p class="control">
+            <label class="label">{{ form_label(form.plainPassword.second) }}</label>
+            {{ form_widget(form.plainPassword.second, {'attr': {'class': 'input'}}) }}
+        </p>
+    </div>
+
+    <div class="field">
+        <p>
+            Password strength: <span id="password-strength">unknown</span>
+        </p>
+    </div>
+
+    <div class="field">
+        <p class="control">
+            <input type="submit" class="button is-primary" value="{{ 'registration.submit'|trans }}" />
+        </p>
     </div>
 {{ form_end(form) }}
