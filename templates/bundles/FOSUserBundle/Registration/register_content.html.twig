@@ -1,33 +1,38 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
+{% macro render_field(form, form_field) %}
+    <div class="field">
+        {% set is_submitted = form.vars.submitted %}
+        {% set is_valid = form_field.vars.valid %}
+
+        {% if is_submitted and is_valid %}
+            {% set class = 'input is-success' %}
+        {% elseif is_submitted and not is_valid %}
+            {% set class = 'input is-danger' %}
+        {% else %}
+            {% set class = 'input' %}
+        {% endif %}
+
+        <p class="control">
+            <label class="label">{{ form_label(form_field) }}</label>
+            {{ form_widget(form_field, {'attr': {'class': class}}) }}
+        </p>
+
+        {% if not is_valid %}
+            <p class="help is-danger">
+                {% for error in form_field.vars.errors %}
+                    {{ error.message }}
+                {% endfor %}
+            </p>
+        {% endif %}
+    </div>
+{% endmacro %}
+
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    <div class="field">
-        <p class="control">
-            <label class="label">{{ form_label(form.username) }}</label>
-            {{ form_widget(form.username, {'attr': {'class': 'input'}}) }}
-        </p>
-    </div>
-
-    <div class="field">
-        <p class="control">
-            <label class="label">{{ form_label(form.email) }}</label>
-            {{ form_widget(form.email, {'attr': {'class': 'input'}}) }}
-        </p>
-    </div>
-
-    <div class="field">
-        <p class="control">
-            <label class="label">{{ form_label(form.plainPassword.first) }}</label>
-            {{ form_widget(form.plainPassword.first, {'attr': {'class': 'input'}}) }}
-        </p>
-    </div>
-
-    <div class="field">
-        <p class="control">
-            <label class="label">{{ form_label(form.plainPassword.second) }}</label>
-            {{ form_widget(form.plainPassword.second, {'attr': {'class': 'input'}}) }}
-        </p>
-    </div>
+    {{ _self.render_field(form, form.username) }}
+    {{ _self.render_field(form, form.email) }}
+    {{ _self.render_field(form, form.plainPassword.first) }}
+    {{ _self.render_field(form, form.plainPassword.second) }}
 
     <div class="field">
         <p>
