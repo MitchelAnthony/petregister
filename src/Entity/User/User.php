@@ -28,7 +28,8 @@ class User extends BaseUser
      *
      * @Assert\NotBlank()
      * @Assert\Regex(
-     *     pattern="/^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{12,}$/")
+     *     pattern="/^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{12,}$/",
+     *     message="user.password_requirements")
      *
      * At least 12 characters, one lowercase, one uppercase, one number and a special character. See {@link https://stackoverflow.com/questions/48345922/reference-password-validation}
      */
